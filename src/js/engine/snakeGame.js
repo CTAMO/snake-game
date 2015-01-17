@@ -1,7 +1,7 @@
-(function(global) {
-    var snakeGameNS = global.snakeGameNS || {};
+(function(global, undefined) {
+    var snakeGameNS = global.SnakeGameNS || {};
 
-    snakeGameNS.game = "text";
+    snakeGameNS.game = "Snake game by stamo";
 
-    global.snakeGameNS = snakeGameNS;
+    global.SnakeGameNS = snakeGameNS;
 })(window);

@@ -7,6 +7,7 @@
         snake.speed = speed;
         snake.direction = direction;
         snake.renderer = renderer;
+        snake.score = 0;
     };
 
     ns.Snake.prototype = (function() {
@@ -24,12 +25,10 @@
         };
 
         var crashIntoWall = function() {
-            console.log("game over");
             return true;
         };
 
         var crashIntoSelf = function() {
-            console.log("game over");
             return true;
         };
 
@@ -43,9 +42,11 @@
         };
 
         var eatFruit = function(fruit, field) {
-            this.renderer.cleanElement(fruit.position);
-            fruit.getRandomPosition(field, this);
-            this.renderer.renderElement(fruit.position, ns.GAME_FIELD_TYPE.FRUIT);
+            var snake = this;
+            snake.renderer.cleanElement(fruit.position);
+            fruit.getRandomPosition(field, snake);
+            snake.renderer.renderElement(fruit.position, ns.GAME_FIELD_TYPE.FRUIT);
+            snake.score++;
         };
 
         var move = function(fruit, field) {

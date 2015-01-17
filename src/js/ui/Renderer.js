@@ -9,19 +9,18 @@
         ELEMENT = "element",
         DASH = "-";
 
-
     ns.Renderer = function(classNames) {
         this.cssClassNames = classNames;
     };
 
     ns.Renderer.prototype = {
-        renderElement: function(block, blockType) {
-            var cell = $("#" + ELEMENT + DASH + block.x + DASH + block.y)[0];
-            cell.className = this.cssClassNames[blockType];
+        renderElement: function(element, elementType) {
+            var cell = $("#" + ELEMENT + DASH + element.x + DASH + element.y)[0];
+            cell.className = this.cssClassNames[elementType];
         },
 
-        cleanElement: function(block) {
-            var cell = $("#" + ELEMENT + DASH + block.x + DASH + block.y)[0];
+        cleanElement: function(element) {
+            var cell = $("#" + ELEMENT + DASH + element.x + DASH + element.y)[0];
             cell.className = this.cssClassNames[GAME_FIELD_TYPE.EMPTY];
         },
 

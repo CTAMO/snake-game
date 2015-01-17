@@ -6,7 +6,7 @@
 
         function run(snake, fruit, gameField) {
             if (snake.move(fruit, gameField)) {
-                ns.Engine.end();
+                ns.Engine.end(snake.score);
             }
         }
 
@@ -17,8 +17,10 @@
             gameInterval = setInterval(gameFunction, frameSpeed);
         }
 
-        function end() {
+        function end(score) {
             clearInterval(gameInterval);
+            alert("Game over! Your score is: " + score);
+
         }
 
         return {

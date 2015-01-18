@@ -20,7 +20,6 @@
         function end(score) {
             clearInterval(gameInterval);
             alert("Game over! Your score is: " + score);
-
         }
 
         return {
